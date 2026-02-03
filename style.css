@@ -374,3 +374,129 @@ nav a.active {
     cursor: pointer;
     font-size: 18px;
 }
+
+/* =========================================
+   商品詳細ページ (item.html)
+   ========================================= */
+.item-detail-section {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.item-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex; /* 横並びにする */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* 左側：画像エリア */
+.item-gallery {
+    flex: 1; /* 幅を半分確保 */
+}
+.item-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* 画像がない部分を薄いグレーに */
+}
+
+/* 右側：情報エリア */
+.item-info {
+    flex: 1; /* 幅を半分確保 */
+    padding-top: 20px;
+}
+
+.item-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.item-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+.tax-in {
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+    margin-left: 5px;
+}
+
+.item-desc {
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* サイズ選択ボタン */
+.option-area {
+    margin-bottom: 30px;
+}
+.option-area label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.size-selector {
+    display: flex;
+    gap: 10px;
+}
+/* ラジオボタン自体は隠す */
+.size-selector input {
+    display: none;
+}
+/* ラジオボタンのラベルをボタンのように見せる */
+.size-selector label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s;
+}
+/* 選ばれている時のデザイン */
+.size-selector input:checked + label {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* カートボタン */
+.add-cart-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.add-cart-btn:hover {
+    opacity: 0.7;
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* スマホ用レスポンシブ（縦並びにする） */
+@media (max-width: 768px) {
+    .item-container {
+        flex-direction: column; /* 縦並び */
+        gap: 30px;
+    }
+}
