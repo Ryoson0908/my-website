@@ -245,3 +245,132 @@ footer {
     font-size: 12px;
     letter-spacing: 1px;
 }
+
+/* =========================================
+   サブページ共通設定
+   ========================================= */
+.page-header {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.page-header h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.page-header p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* メニューの現在地（active）をピンクにする */
+nav a.active {
+    color: #FF69B4;
+    border-bottom: 2px solid #FF69B4;
+}
+
+/* =========================================
+   CONCEPTページのデザイン
+   ========================================= */
+.concept-detail {
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.concept-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+/* スマホでは縦並びにする設定 */
+@media (max-width: 768px) {
+    .concept-block {
+        flex-direction: column;
+    }
+}
+
+.concept-block.reverse {
+    flex-direction: row-reverse; /* 写真と文字を左右逆にする */
+}
+@media (max-width: 768px) {
+    .concept-block.reverse {
+        flex-direction: column;
+    }
+}
+
+.c-img {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.c-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+.c-img:hover img {
+    transform: scale(1.05);
+}
+
+.c-text {
+    flex: 1;
+}
+.c-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-left: 5px solid #FF69B4;
+    padding-left: 15px;
+}
+.c-text p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* =========================================
+   CONTACTページのデザイン
+   ========================================= */
+.contact-section {
+    max-width: 600px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #fafafa;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF69B4;
+    background-color: #fff;
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
