@@ -18,3 +18,13 @@ if (hamburger) {
         nav.classList.toggle('open');
     });
 }
+
+// ローディング画面の制御
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loading');
+    
+    // 少しだけ遅らせて消す（ロゴを見せるため）
+    setTimeout(function() {
+        loader.classList.add('loaded');
+    }, 1000); // 1000ミリ秒 = 1秒後に消える
+});
