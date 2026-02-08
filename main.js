@@ -28,3 +28,16 @@ window.addEventListener('load', function() {
         loader.classList.add('loaded');
     }, 1000); // 1000ミリ秒 = 1秒後に消える
 });
+
+// スクロールして表示エリアに入ったらアニメーション
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show'); // 画面に入ったら show クラスを追加
+        }
+    });
+});
+
+// 監視対象の要素を探す
+const fadeElements = document.querySelectorAll('.fade-in-up');
+fadeElements.forEach((el) => observer.observe(el));

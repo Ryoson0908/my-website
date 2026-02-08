@@ -635,3 +635,19 @@ nav a.active {
     opacity: 0;
     visibility: hidden;
 }
+
+/* =========================================
+   スクロールアニメーション（フワッと表示）
+   ========================================= */
+/* 初期状態：透明にして、少し下に下げておく */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out; /* 1秒かけてゆっくり変化 */
+}
+
+/* 合図が出た時の状態：不透明にして、元の位置に戻す */
+.fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
