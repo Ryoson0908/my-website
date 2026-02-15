@@ -38,19 +38,23 @@
     </div>
 
     <section class="contact-section">
-        <form class="contact-form fade-in-up">
+        <form class="contact-form fade-in-up" action="https://formspree.io/f/mlgwbpgj" method="POST">
+            
             <div class="form-group">
                 <label>お名前</label>
-                <input type="text" placeholder="例：山田 太郎">
+                <input type="text" name="name" placeholder="例：山田 太郎" required>
             </div>
+            
             <div class="form-group">
                 <label>メールアドレス</label>
-                <input type="email" placeholder="例：info@luckpot.com">
+                <input type="email" name="email" placeholder="例：info@luckpot.com" required>
             </div>
+            
             <div class="form-group">
                 <label>お問い合わせ内容</label>
-                <textarea rows="5" placeholder="ご自由にご記入ください"></textarea>
+                <textarea name="message" rows="5" placeholder="ご自由にご記入ください" required></textarea>
             </div>
+            
             <button type="submit" class="btn submit-btn">送信する</button>
         </form>
     </section>
