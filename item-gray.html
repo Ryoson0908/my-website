@@ -29,6 +29,7 @@
                 <li><a href="concept.html">CONCEPT</a></li>
                 <li><a href="index.html#products">PRODUCTS</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="#" id="cart-icon" class="cart-btn">CART <span id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -74,7 +75,21 @@
         <p>&copy; 2026 LUCKPOT All Rights Reserved.</p>
     </footer>
     
-<script src="main.js"></script>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-header">
+            <h2>SHOPPING CART</h2>
+            <button id="close-cart" class="close-btn">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-msg">カートは空です</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">TOTAL: <span id="cart-total">¥0</span></div>
+            <button id="checkout-btn" class="btn checkout-btn">LINEで注文手続きへ</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <script src="main.js"></script>
 
 </body>
 </html>
