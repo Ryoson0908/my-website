@@ -726,3 +726,111 @@ nav a.active {
 @media (max-width: 400px) {
     .cart-modal { width: 100%; right: -100%; }
 }
+
+/* =========================================
+   スライドショー設定 (Swiper) 強制配置版
+   ========================================= */
+/* 1. スライドショー全体の箱 */
+.hero-slider {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-color: #000;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. スライドの基準位置設定 */
+.swiper-slide {
+    position: relative; /* ここを基準にする */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 3. 背景画像の設定 */
+.slide-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    filter: brightness(0.7);
+}
+
+/* 4. 文字とボタンのエリア（★ここが重要！強制的に場所を指定） */
+.hero-text {
+    position: absolute;       /* 絶対配置モード */
+    z-index: 10;              /* 一番手前に */
+    
+    /* 下・左右の位置指定 */
+    bottom: 80px;             /* ★下から80px浮かせた場所 */
+    left: 50%;                /* 左から50%の場所（これだけだと少しズレる） */
+    transform: translateX(-50%); /* ★自身の幅の半分だけ左に戻す（これでド真ん中になる） */
+    
+    /* 文字の設定 */
+    text-align: center;       /* 文字を中央揃え */
+    width: 90%;               /* スマホではみ出さないように */
+    max-width: 800px;
+    color: #fff;
+}
+
+/* 5. 見出しのデザイン */
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    font-family: sans-serif;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* 6. サブテキスト */
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* 7. ボタンのデザイン */
+.hero-text .btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-text .btn:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+/* ページネーション（点々） */
+.swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+    background: #FF69B4;
+    opacity: 1;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .hero-slider { height: 500px; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text p { font-size: 0.9rem; }
+    /* スマホだともう少し下に下げたい場合はここを調整 */
+    .hero-text { bottom: 60px; }
+}

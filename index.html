@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>LUCKPOT | 公式オンラインストア</title>
+    
+    <link rel="icon" href="img/S__47874087.jpg">
+
+    <meta property="og:url" content="https://Ryoson0908.github.io/my-website/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LUCKPOT | 公式オンラインストア" />
+    <meta property="og:description" content="運命を、着こなせ。LUCKPOTの2026年新作コレクションが登場。" />
+    <meta property="og:site_name" content="LUCKPOT" />
+    <meta property="og:image" content="https://Ryoson0908.github.io/my-website/img/Gemini_Generated_Image_bliwyubliwyubliw.png" />
+
     <link rel="stylesheet" href="style.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -41,11 +50,39 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>New Collection 2026</h1>
-            <p>ポップでキャッチーな、日常のスパイスを。</p>
-            <a href="#products" class="btn">View Items</a>
+    <section class="hero-slider">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="slide-img" style="background-image: url('img/Gemini_2_Image_j8sw0cj8sw0cj8sw.png');"></div>
+                    <div class="hero-text">
+                        <h1>NEW COLLECTION 2026</h1>
+                        <p>ポップでキャッチーな、日常のスパイスを。</p>
+                        <a href="#products" class="btn">View Items</a>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="slide-img" style="background-image: url('img/Gemini_3_Image_j8sw0cj8sw0cj8sw.png');"></div>
+                    <div class="hero-text">
+                        <h1>TOKYO NEO STREET</h1>
+                        <p>光と影、運命を着こなせ。</p>
+                        <a href="#products" class="btn">Check Now</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="slide-img" style="background-image: url('img/Gemini_Generated_Image_j8sw0cj8sw0cj8sw.png');"></div>
+                    <div class="hero-text">
+                        <h1>STREET x POP</h1>
+                        <p>あなただけのスタイルを見つけよう。</p>
+                        <a href="#products" class="btn">View Lookbook</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -114,7 +151,9 @@
         </div>
     </div>
     <div id="cart-overlay" class="cart-overlay"></div>
-    <script src="main.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>

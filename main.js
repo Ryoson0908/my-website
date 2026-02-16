@@ -176,3 +176,21 @@ const observer = new IntersectionObserver((entries) => {
 // 監視対象の要素を探す
 const fadeElements = document.querySelectorAll('.fade-in-up');
 fadeElements.forEach((el) => observer.observe(el));
+
+// スライドショーの起動（Swiper）
+// 画面にスライドショーがある時だけ動くようにする
+if (document.querySelector('.mySwiper')) {
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,       // ずっとループする
+        effect: "fade",   // フワッと切り替わる（スライドさせたい場合は "slide" に変更）
+        speed: 2000,      // 2秒かけて切り替わる
+        autoplay: {
+            delay: 4000,  // 4秒ごとに切り替わる
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+}
