@@ -177,20 +177,58 @@ const observer = new IntersectionObserver((entries) => {
 const fadeElements = document.querySelectorAll('.fade-in-up');
 fadeElements.forEach((el) => observer.observe(el));
 
-// スライドショーの起動（Swiper）
-// 画面にスライドショーがある時だけ動くようにする
-if (document.querySelector('.mySwiper')) {
-    var swiper = new Swiper(".mySwiper", {
-        loop: true,       // ずっとループする
-        effect: "fade",   // フワッと切り替わる（スライドさせたい場合は "slide" に変更）
-        speed: 2000,      // 2秒かけて切り替わる
-        autoplay: {
-            delay: 4000,  // 4秒ごとに切り替わる
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
+// ヒーローロゴの高度なマウストラッキング（GSAP）
+const heroSection = document.getElementById('hero-section');
+const heroLogo = document.getElementById('hero-logo');
+
+if (heroSection && heroLogo && window.gsap) {
+    heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const diffX = e.clientX - centerX;
+        const diffY = e.clientY - centerY;
+
+        // 移動量（マウスに引っ張られる感覚）
+        const moveX = Math.max(-28, Math.min(28, diffX * 0.03));
+        const moveY = Math.max(-20, Math.min(20, diffY * 0.03));
+
+        // 3D回転（奥行き表現）
+        const rotateY = Math.max(-10, Math.min(10, diffX * 0.02));
+        const rotateX = Math.max(-10, Math.min(10, -diffY * 0.02));
+
+        // ロゴへの距離に応じたスケール（近いほど少し大きい）
+        const logoRect = heroLogo.getBoundingClientRect();
+        const logoCenterX = logoRect.left + logoRect.width / 2;
+        const logoCenterY = logoRect.top + logoRect.height / 2;
+        const distance = Math.hypot(e.clientX - logoCenterX, e.clientY - logoCenterY);
+        const maxDistance = Math.hypot(window.innerWidth, window.innerHeight) / 1.9;
+        const proximity = Math.max(0, 1 - distance / maxDistance);
+        const scale = 1 + proximity * 0.06;
+
+        gsap.to(heroLogo, {
+            x: moveX,
+            y: moveY,
+            rotateX: rotateX,
+            rotateY: rotateY,
+            scale: scale,
+            duration: 0.65,
+            ease: 'power3.out',
+            overwrite: 'auto'
+        });
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+        gsap.to(heroLogo, {
+            x: 0,
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            scale: 1,
+            duration: 1.1,
+            ease: 'elastic.out(1, 0.45)',
+            overwrite: 'auto'
+        });
     });
 }

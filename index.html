@@ -6,7 +6,7 @@
     
     <title>LUCKPOT | 公式オンラインストア</title>
     
-    <link rel="icon" href="img/S__47874087.jpg">
+    <link rel="icon" href="img/favicon-luckpot.png" type="image/png">
 
     <meta property="og:url" content="https://Ryoson0908.github.io/my-website/" />
     <meta property="og:type" content="website" />
@@ -16,8 +16,6 @@
     <meta property="og:image" content="https://Ryoson0908.github.io/my-website/img/Gemini_Generated_Image_bliwyubliwyubliw.png" />
 
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -28,61 +26,38 @@
         </div>
     </div>
 
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="img/S__47874087.jpg" alt="LUCKPOT Logo" height="60"></a>
-        </div>
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header class="site-header">
+        <div class="header-left">
+            <button class="hamburger" type="button" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo logo-wordmark">
+                <a href="index.html" aria-label="LUCKPOT ホーム">
+                    <img src="img/luckpot-header-logo.png" alt="LUCKPOT">
+                </a>
+            </div>
         </div>
 
-        <nav id="nav-menu">
+        <nav id="nav-menu" class="header-nav">
             <ul>
                 <li><a href="index.html">TOP</a></li>
                 <li><a href="concept.html">CONCEPT</a></li>
                 <li><a href="index.html#products">PRODUCTS</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="#" id="cart-icon" class="cart-btn">CART <span id="cart-count">0</span></a></li>
             </ul>
         </nav>
+
+        <div class="header-right">
+            <a href="#" class="utility-link">EN</a>
+            <a href="#" id="cart-icon" class="utility-link cart-btn">CART <span id="cart-count">0</span></a>
+        </div>
     </header>
 
-    <section class="hero-slider">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                
-                <div class="swiper-slide">
-                    <div class="slide-img" style="background-image: url('img/Gemini_2_Image_j8sw0cj8sw0cj8sw.png');"></div>
-                    <div class="hero-text">
-                        <h1>NEW COLLECTION 2026</h1>
-                        <p>ポップでキャッチーな、日常のスパイスを。</p>
-                        <a href="#products" class="btn">View Items</a>
-                    </div>
-                </div>
-                
-                <div class="swiper-slide">
-                    <div class="slide-img" style="background-image: url('img/Gemini_3_Image_j8sw0cj8sw0cj8sw.png');"></div>
-                    <div class="hero-text">
-                        <h1>TOKYO NEO STREET</h1>
-                        <p>光と影、運命を着こなせ。</p>
-                        <a href="#products" class="btn">Check Now</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="slide-img" style="background-image: url('img/Gemini_Generated_Image_j8sw0cj8sw0cj8sw.png');"></div>
-                    <div class="hero-text">
-                        <h1>STREET x POP</h1>
-                        <p>あなただけのスタイルを見つけよう。</p>
-                        <a href="#products" class="btn">View Lookbook</a>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="swiper-pagination"></div>
+    <section class="hero-minimal" id="hero-section">
+        <div class="hero-centerpiece" id="hero-logo">
+            <img src="img/luckpot-hero-logo.png" alt="LUCKPOTロゴ" class="hero-logo">
         </div>
     </section>
 
@@ -152,8 +127,7 @@
     </div>
     <div id="cart-overlay" class="cart-overlay"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

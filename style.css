@@ -834,3 +834,343 @@ nav a.active {
     /* スマホだともう少し下に下げたい場合はここを調整 */
     .hero-text { bottom: 60px; }
 }
+
+/* =========================================
+   MINIMAL MONOTONE OVERRIDE (index)
+   ========================================= */
+:root {
+    --mono-bg: #fafafa;
+    --mono-white: #ffffff;
+    --mono-black: #000000;
+    --mono-gray-1: #1f1f1f;
+    --mono-gray-2: #5a5a5a;
+    --mono-line: #e8e8e8;
+}
+
+body {
+    background-color: var(--mono-bg);
+    color: var(--mono-black);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 28px;
+    padding: 22px 44px;
+    background: var(--mono-bg);
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-right {
+    justify-content: flex-end;
+}
+
+.logo,
+.logo-wordmark,
+.logo-wordmark a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    box-shadow: none;
+    filter: none;
+}
+
+.logo-wordmark img {
+    display: block;
+    width: auto;
+    height: 40px;
+    max-height: 40px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    filter: none;
+}
+
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 16px;
+    position: relative;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    padding: 0;
+}
+
+.hamburger span {
+    height: 2px;
+    background-color: var(--mono-black);
+}
+
+.hamburger span:nth-child(2) {
+    top: 7px;
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+.header-nav {
+    justify-self: center;
+}
+
+.header-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    padding: 12px 28px;
+    margin: 0;
+    border-radius: 999px;
+    background: var(--mono-white);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.header-nav a,
+.utility-link {
+    text-decoration: none;
+    color: var(--mono-gray-1);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.header-nav a:hover,
+.utility-link:hover {
+    color: var(--mono-black);
+}
+
+.utility-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+#cart-count {
+    margin-left: 6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--mono-black);
+    color: var(--mono-white);
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.hero-minimal {
+    min-height: calc(100vh - 92px);
+    display: grid;
+    place-items: center;
+    background: var(--mono-bg);
+    padding: 24px 20px;
+    perspective: 1000px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-centerpiece {
+    text-align: center;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-logo {
+    display: block;
+    width: clamp(220px, 32vw, 460px);
+    height: auto;
+    margin: 0 auto;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+.concept,
+.products {
+    background: var(--mono-bg);
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.concept h2,
+.products h2 {
+    font-size: 34px;
+    letter-spacing: 0.15em;
+    color: var(--mono-black);
+    margin-bottom: 56px;
+}
+
+.concept h2::after,
+.products h2::after {
+    width: 58px;
+    height: 2px;
+    margin-top: 20px;
+    background-color: var(--mono-black);
+}
+
+.concept-lead {
+    font-size: 30px;
+    margin-bottom: 42px;
+    letter-spacing: 0.08em;
+}
+
+.concept-text {
+    color: var(--mono-gray-2);
+    line-height: 2.2;
+}
+
+.product-grid {
+    gap: 72px;
+}
+
+.product-item {
+    width: min(320px, 100%);
+    background: var(--mono-white);
+    border: 1px solid var(--mono-line);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 24px;
+    transition: transform 0.25s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+}
+
+.image-box {
+    height: 340px;
+    margin-bottom: 22px;
+}
+
+.product-item:hover .image-box img {
+    transform: none;
+}
+
+.p-name {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.p-price {
+    color: var(--mono-gray-2);
+    letter-spacing: 0.06em;
+}
+
+footer {
+    background: var(--mono-bg);
+    border-top: 1px solid var(--mono-line);
+    color: var(--mono-gray-2);
+    padding: 72px 24px;
+}
+
+.sns-link {
+    color: var(--mono-black);
+    border: 1px solid var(--mono-black);
+    border-radius: 999px;
+    background: transparent;
+}
+
+.sns-link:hover {
+    background: var(--mono-black);
+    color: var(--mono-white);
+}
+
+.btn,
+.checkout-btn,
+.add-cart-btn {
+    background: var(--mono-black);
+    color: var(--mono-white);
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.btn:hover,
+.checkout-btn:hover,
+.add-cart-btn:hover {
+    background: #222;
+    color: var(--mono-white);
+    transform: none;
+    box-shadow: none;
+}
+
+.cart-overlay {
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.cart-modal,
+.cart-header,
+.cart-footer {
+    background: var(--mono-white);
+}
+
+.fade-in-up {
+    transform: translateY(28px);
+    transition: all 0.7s ease-out;
+}
+
+@media (max-width: 980px) {
+    .site-header {
+        grid-template-columns: 1fr auto;
+        row-gap: 14px;
+        padding: 20px 20px;
+    }
+
+    .header-nav {
+        grid-column: 1 / -1;
+        order: 3;
+        width: 100%;
+        position: static;
+        top: auto;
+        right: auto;
+        height: auto;
+        padding-top: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .header-nav ul {
+        justify-content: center;
+        gap: 16px;
+        padding: 10px 18px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .logo-wordmark a {
+        font-size: 16px;
+    }
+
+    .hero-minimal {
+        min-height: calc(100vh - 130px);
+        padding: 24px 16px;
+    }
+
+    .concept,
+    .products {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+}
